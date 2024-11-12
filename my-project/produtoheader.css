@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo-arrumadin a{
+    color:white;
+}
+/* LEMBRAR DE MUDAR ISSO ^ APÓS ADICIONAR IMAGEM COM A LOGO*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #211E1E; 
+    color: white;
+    padding: 20px 40px;
+    height: 120px;
+}
+
+nav {
+    margin-left: auto;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+}
+
+nav ul li a.carrinho-link {
+    background-color: #AA410F;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.pesquisar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.pesquisar input {
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+.pesquisar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.pesquisar button:hover {
+    background-color: #b6590d;
+}
