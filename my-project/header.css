@@ -1,7 +1,17 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 header {
@@ -12,6 +22,8 @@ header {
     color: white;
     padding: 20px 40px;
     height: 120px;
+    font-family: 'Inter';
+    font-weight: thin;
 }
 
 nav {
@@ -30,10 +42,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #a38061;
     text-decoration: none;
-    font-weight: bold;
     padding: 5px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #AA410F;
 }
 
 nav ul li a.carrinho-link {

@@ -1,28 +1,57 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
 body {
     background-color: #141313;
 }
 
-.titulo .titulo-principal {
-    text-align: center;
-    margin: 30px;
+.titulo-principal {
+    height: 145px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    position: relative;
 }
 
 .imagens-container {
     display: flex;
     justify-content: center; 
-    gap: 20px; 
+    gap: 70px; 
     padding: 20px 0; 
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .imagens-container a {
     text-decoration: none;
 }
 
+.imagens-container img {
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.imagens-container img:hover {
+    border-radius: 50%;
+    border: 2px solid white;
+    transform: scale(1.3);
+}
+
 .imagens-container p {
     margin-top: 10px; 
     font-size: 14px; 
-    color: black; 
-    font-family: Arial, sans-serif; 
+    color: white; 
+    font-family: 'Inter'; 
 }
 
 .botao-container {
@@ -37,6 +66,9 @@ body {
     width: 200px;
     height: 55px;
     font-size: 16px; 
+    margin-bottom: 40px;
+    font-weight: 100;
+    font-family: 'Inter';
     padding: 10px 20px; 
     border: none; 
     border-radius: 5px; 
@@ -53,6 +85,8 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    height: 400px;
+    width: 100%;
 }
 
 .explore-imagem {
@@ -64,15 +98,17 @@ body {
 .destaques-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 .destaques {
-    background-color: #AA410F;
+    background-color: #b44714;
     color: white;
-    padding: 10px 20px;
+    padding: 17px;
     border-radius: 25px;
     font-size: 16px;
+    font-weight: 100;
+    font-family: 'Inter';
     width: 200px;
     height: 55px;
     text-align: center;
@@ -82,13 +118,14 @@ body {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
-    gap: 20px; 
-    margin-top: 20px; 
+    gap: 60px; 
+    margin-top: 70px; 
+    margin-bottom: 50px;
 }
 
 .gallery-image {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 10px;
     object-fit: cover;
 }

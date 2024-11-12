@@ -1,14 +1,88 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
 .footer {
     background-color: #211E1E;
     color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px;
+    width: 100%;
 }
 
-.pagar-com {
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.informacoes-lado-esquerdo {
+    flex: 1;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Inter';
+    font-weight: 100;
 }
 
+
+.informacoes-lado-direito {
+    flex: 0 0 300px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    font-family: 'Inter';
+    font-weight: 100;
+}
+
+.encontre-nos, .mais-ofertas, .links-central-ajuda {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mais-ofertas input {
+    width: 100%;
+    margin: 5px 0;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.encontre-nos .redes-sociais {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+.encontre-nos img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-privacy {
+    margin-top: 20px;
+    text-align: left;
+    padding-top: 15px;
+}
+
+.imagens-pagamento {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
 .imagens-pagamento img {
     width: 60px;
@@ -17,26 +91,22 @@
 }
 
 .direitos-reservados {
-    text-align: left;
-}
-
-.footer-privacy {
-    text-align: left;
+    width: 90%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-privacy a {
-    margin-top: 10px;
-    
-}
-
-
-.footer-privacy a {
-    color: white;
     text-decoration: none;
+    color: white;
     transition: color 0.3s;
-    
 }
 
 .footer-privacy a:hover {
-    color: #AA410F; 
+    color: #AA410F;
 }
+
+.links-central-ajuda a {
+    color: white;
+    text-decoration: none;
+}
+
