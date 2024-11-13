@@ -1,0 +1,28 @@
+/* Estilos do footer */
+.footer {
+  background-color: #211E1E;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* Isso empurra o footer para o final */
+}
+/* Estilos para a seção de Direitos Reservados */
+.direitos-reservados {
+  text-align: center;
+  margin-bottom: 3px;
+}
+/* Estilos para a seção de Privacidade */
+.footer-privacy {
+  text-align: center;
+}
+.footer-privacy a {
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-privacy a:hover {
+  color: #AA410F;
+}
+/* Estilos para a seção Quem Somos */
+

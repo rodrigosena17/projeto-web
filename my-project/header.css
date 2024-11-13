@@ -71,5 +71,8 @@ nav ul li a.carrinho-link {
 }
 
 .pesquisar button:hover {
-    background-color: #ccc;
+    background-color: #b6590d;
+}
+.logo-arrumadin a{
+    color:white;
 }
