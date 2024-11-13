@@ -26,6 +26,10 @@ header {
     font-weight: thin;
 }
 
+.logo-arrumadin {
+    margin-top: 10px;
+}
+
 nav {
     margin-left: auto;
 }
@@ -61,31 +65,30 @@ nav ul li a.carrinho-link {
 }
 
 .pesquisar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
+    position: relative;
+    width: 300px;
 }
 
 .pesquisar input {
-    padding: 5px;
-    margin-right: 10px;
+    width: 100%;
+    padding: 8px 30px 8px 0;
     border: none;
-    border-radius: 3px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
 }
 
-.pesquisar button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #f0f0f0;
-    color: #333;
-    border-radius: 3px;
+.pesquisar input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-}
-
-.pesquisar button:hover {
-    background-color: #ccc;
 }

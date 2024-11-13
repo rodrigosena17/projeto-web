@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
 
     <header>
         <div class="logo-arrumadin">
-                Logo
-            <!--TO DO-->
+            <img src="images/arrumadin-logo.png" alt="logo-arrumadin">
         </div>
         
         <nav>
@@ -21,13 +22,14 @@
                 <li><a href="#">Comprar</a></li>
                 <li><a href="#">Quem nós somos</a></li>
                 <li><a href="#">Meu Perfil</a></li>
-                <li><a href="#" class="carrinho-link">Carrinho</a></li>
+                <li><a href="#" class="carrinho-link">Carrinho(3)</a></li>
             </ul>
         </nav>
 
         <div class="pesquisar">
-            <input type="text" placeholder="Pesquise aqui...">
-            <button>Buscar</button>
+            <input type="text" class="search-input" placeholder="Pesquise aqui...">
+            <i class="fas fa-search search-icon"></i>
+            
         </div>
     </header>
 
@@ -48,7 +50,7 @@
             </div>
 
             <div class="botao-container">
-                <button class="explore-button">Explore</button> <!--BOTÃO EXPLORAR TROCAR NOME-->
+                <button class="explore-button">Explore</button> 
             </div> 
 
             <div class="imagem-div">
@@ -59,16 +61,116 @@
                 <h2 class="destaques">Destaques</h2>
             </div>
 
-            <div class="imagem-galeria">
-                <img src="images/Slice 11.png" alt="Imagem 1" class="gallery-image">
-                <img src="images/Slice 13.png" alt="Imagem 2" class="gallery-image">
-                <img src="images/Slice 14.png" alt="Imagem 3" class="gallery-image">
-                <img src="images/Slice 15.png" alt="Imagem 4" class="gallery-image">
-                <img src="images/Slice 16.png" alt="Imagem 5" class="gallery-image">
-                <img src="images/Slice 17.png" alt="Imagem 6" class="gallery-image">
-                <img src="images/Slice 18.png" alt="Imagem 7" class="gallery-image">
-                <img src="images/roupa-numero-8.jpg" alt="Imagem 8" class="gallery-image">
-              </div>
+            <div class="product-grid">
+                
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <img src="images/Slice 11.png" alt="Imagem 1" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Inverno Suéter</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">4,7 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$85,00</p>
+                    </div>
+                </div>
+                
+
+            
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <img src="images/Slice 13.png" alt="Imagem 2" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Calça Jeans Feminina</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">2,5 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$50,00</p>
+                    </div>
+                </div>
+                
+
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <img src="images/Slice 14.png" alt="Calça Jeans Feminina" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Vestido Evangélico Estampado</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">9,1 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$60,00</p>
+                    </div>
+                </div>
+
+
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <img src="images/Slice 15.png" alt="Conjunto Primavera" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Primavera Verão</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">4,4 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$45,00</p>
+                    </div>
+                </div>
+
+
+                <!-- Produto 5 -->
+                <div class="product-card">
+                    <img src="images/Slice 16.png" alt="Suéter Marrom Unissex" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Suéter Marrom Unissex</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">1,2 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$52,99</p>
+                    </div>
+                </div>
+
+
+                <!-- Produto 6 -->
+                <div class="product-card">
+                    <img src="images/Slice 17.png" alt="Conjunto Plus Size" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto Plus Size</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">5 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$75,00</p>
+                    </div>
+                </div>
+                
+
+                <!-- Produto 7 -->
+                <div class="product-card">
+                    <img src="images/Slice 18.png" alt="Short Verde Alfaiataria" class="product-image">
+                    <button class="favorite-button">❤️</button>
+                    <div class="product-info">
+                        <h3 class="product-title">Short Verde Alfaiataria</h3>
+                        <div>
+                            <span class="rating">★★★★★</span>
+                            <span class="sales">2,6 Mil Vendidos</span>
+                        </div>
+                        <p class="price">R$35,00</p>
+                    </div>
+                </div>
+              
+            </div>
         </section>
     </main>
 
@@ -83,12 +185,11 @@
                     <p>Pagar com</p>
                 </div>
                 <div class="imagens-pagamento">
-                    <img src="imagem1.jpg" alt="Imagem 1">
-                    <img src="imagem2.jpg" alt="Imagem 2">
-                    <img src="imagem3.jpg" alt="Imagem 3">
-                    <img src="imagem4.jpg" alt="Imagem 4">
-                    <img src="imagem5.jpg" alt="Imagem 5">
-                    <img src="imagem6.jpg" alt="Imagem 6">
+                    <img src="images/icones-pagamento/icone mastercard.png" alt="Imagem 1">
+                    <img src="images/icones-pagamento/icone visa.png" alt="Imagem 2">
+                    <img src="images/icones-pagamento/icone pix.png" alt="Imagem 3">
+                    <img src="images/icones-pagamento/icone gpay.png" alt="Imagem 4">
+                    <img src="images/icones-pagamento/icone boleto.png" alt="Imagem 5">
                 </div>
 
                 <div class="direitos-reservados">
