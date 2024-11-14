@@ -8,6 +8,11 @@
     src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     background-color: #141313;
 }
