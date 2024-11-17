@@ -92,3 +92,95 @@ nav ul li a.carrinho-link {
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
 }
+
+
+
+/* Media Queries para celular */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 15px 20px;
+        height: auto;
+    }
+
+    .logo-arrumadin {
+        display: none;  
+    }
+
+    .pesquisar {
+        display: none;  
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        height: auto;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        background-color: #211E1E;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    nav ul li a.carrinho-link {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    nav ul {
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+}

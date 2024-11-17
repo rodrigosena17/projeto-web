@@ -110,3 +110,76 @@
     text-decoration: none;
 }
 
+
+/* Nossas Media Queries */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .informacoes-lado-esquerdo,
+    .informacoes-lado-direito {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .informacoes-lado-direito {
+        margin-top: 20px;
+    }
+
+    .encontre-nos,
+    .mais-ofertas,
+    .links-central-ajuda {
+        margin-bottom: 20px;
+    }
+
+    .imagens-pagamento {
+        justify-content: center;
+    }
+
+    .imagens-pagamento img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+
+    .redes-sociais {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-privacy {
+        text-align: center;
+    }
+
+    .direitos-reservados {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 10px;
+    }
+
+    .imagens-pagamento img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mais-ofertas input {
+        height: 40px;
+    }
+
+    .encontre-nos img {
+        width: 25px;
+        height: 25px;
+    }
+}

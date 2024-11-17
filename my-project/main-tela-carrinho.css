@@ -186,3 +186,179 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .container-carrinho {
+        padding: 10px;
+    }
+
+    .conteudo-carrinho {
+        padding: 15px;
+    }
+
+    .titulo-carrinho {
+        font-size: 1.2em;
+    }
+
+    
+    .cabecalho-tabela {
+        display: none; 
+    }
+
+    .item-carrinho {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px 0;
+        position: relative;
+    }
+
+    .descricao {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-carrinho img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .info-produto h3 {
+        font-size: 1em;
+    }
+
+    .info-produto p {
+        font-size: 0.85em;
+    }
+
+    
+    .quantidade {
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .preco {
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+
+    .subtotal {
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+    .botao-remover {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        font-size: 1.2em;
+    }
+
+    
+    .calculadora-frete {
+        flex-direction: column;
+    }
+
+    .input-cep {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .botao-calcular {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    
+    .opcao-frete {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    
+    .acoes-carrinho {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .info-cupom {
+        text-align: center;
+    }
+
+    .botoes {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .botao-continuar-comprando,
+    .botao-finalizar {
+        width: 100%;
+        padding: 12px 20px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .container-carrinho {
+        padding: 5px;
+    }
+
+    .conteudo-carrinho {
+        padding: 10px;
+    }
+
+    .titulo-carrinho {
+        font-size: 1.1em;
+    }
+
+    .item-carrinho img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .resumo-carrinho {
+        padding: 15px;
+    }
+
+    .linha-resumo {
+        font-size: 0.9em;
+    }
+
+    .linha-resumo-total {
+        font-size: 1.1em;
+    }
+
+    .info-cupom {
+        font-size: 0.9em;
+    }
+
+    
+    .botao-quantidade {
+        padding: 8px 12px;
+        font-size: 1.1em;
+    }
+
+    
+    .quantidade input {
+        width: 40px;
+        height: 35px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .container-carrinho {
+        padding: 10px 20px;
+    }
+
+    .botoes {
+        flex-direction: row;
+    }
+
+    .botao-continuar-comprando,
+    .botao-finalizar {
+        width: auto;
+        flex: 1;
+    }
+}

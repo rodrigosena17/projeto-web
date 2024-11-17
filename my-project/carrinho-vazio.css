@@ -49,3 +49,52 @@
 .botao-continuar-comprando:hover {
     background: #45a049;
 }
+
+
+/* Nossas Media Queries */
+@media screen and (max-width: 768px) {
+    .container-carrinho {
+        padding: 10px;
+    }
+
+    .conteudo-carrinho {
+        padding: 15px;
+        min-height: 300px; 
+    }
+
+    .carrinho-vazio {
+        padding: 20px;
+    }
+
+    .mensagem-carrinho-vazio {
+        font-size: 1.5em;
+        margin: 15px 0;
+    }
+
+    .botao-continuar-comprando {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 100%; 
+        max-width: 280px; 
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .container-carrinho {
+        padding: 5px;
+    }
+
+    .conteudo-carrinho {
+        padding: 10px;
+    }
+
+    .mensagem-carrinho-vazio {
+        font-size: 1.2em;
+    }
+
+    .botao-continuar-comprando {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
