@@ -1,7 +1,17 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 header {
@@ -12,6 +22,12 @@ header {
     color: white;
     padding: 20px 40px;
     height: 120px;
+    font-family: 'Inter';
+    font-weight: thin;
+}
+
+.logo-arrumadin {
+    margin-top: 10px;
 }
 
 nav {
@@ -30,10 +46,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #a38061;
     text-decoration: none;
-    font-weight: bold;
     padding: 5px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #AA410F;
 }
 
 nav ul li a.carrinho-link {
@@ -45,31 +65,122 @@ nav ul li a.carrinho-link {
 }
 
 .pesquisar {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
+    position: relative;
+    width: 300px;
 }
 
 .pesquisar input {
-    padding: 5px;
-    margin-right: 10px;
+    width: 100%;
+    padding: 8px 30px 8px 0;
     border: none;
-    border-radius: 3px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    outline: none;
 }
 
-.pesquisar button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #f0f0f0;
-    color: #333;
-    border-radius: 3px;
+.pesquisar input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
 }
 
-.pesquisar button:hover {
-    background-color: #ccc;
+
+
+/* Media Queries para celular */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 15px 20px;
+        height: auto;
+    }
+
+    .logo-arrumadin {
+        display: none;  
+    }
+
+    .pesquisar {
+        display: none;  
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        height: auto;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        background-color: #211E1E;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    nav ul li a.carrinho-link {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    nav ul {
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
 }

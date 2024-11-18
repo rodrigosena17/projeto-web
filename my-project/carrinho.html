@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main-tela-carrinho.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-arrumadin">
+            <a href="pagina-inicial-arrumadin.html"><img src="images/arrumadin-logo.png" alt="logo-arrumadin"></a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#roupas">Comprar</a></li>
+                <li><a href="who.html">Quem nós somos</a></li>
+                <li><a href="#">Meu Perfil</a></li>
+                <li><a href="carrinho.html" class="carrinho-link">Carrinho(2)</a></li>
+            </ul>
+        </nav>
+
+        <div class="pesquisar">
+            <input type="text" class="search-input" placeholder="Pesquise aqui...">
+            <i class="fas fa-search search-icon"></i>
+            
+        </div>
+    </header>
+
+
+    <main class="container-carrinho">
+        <section class="conteudo-carrinho">
+            <div class="cabecalho-carrinho">
+                <h2 class="titulo-carrinho">
+                    <span class="icone-carrinho">🛒</span>
+                    Carrinho de compras
+                </h2>
+            </div>
+    
+            <div class="tabela-carrinho">
+                <div class="cabecalho-tabela">
+                    <div class="descricao">Descrição</div>
+                    <div class="quantidade">Qtd</div>
+                    <div class="preco">Preço</div>
+                    <div class="subtotal">Subtotal</div>
+                    <div class="remover"></div>
+                </div>
+    
+                <div class="itens-carrinho">
+                    <!-- Item 1 -->
+                    <div class="item-carrinho">
+                        <div class="descricao">
+                            <img src="images/Slice 13.png" alt="Calça Jeans Feminina">
+                            <div class="info-produto">
+                                <h3>Calça Jeans Feminina</h3>
+                                <p>Cor: Azul</p>
+                                <p>Tamanho: 38</p>
+                                <p class="codigo">Código do produto: ABCDEFGHIJK321</p>
+                                <span class="estoque">Em estoque</span>
+                            </div>
+                        </div>
+                        <div class="quantidade">
+                            <button class="botao-quantidade">▲</button>
+                            <span>1</span>
+                            <button class="botao-quantidade">▼</button>
+                        </div>
+                        <div class="preco">R$ 123,45</div>
+                        <div class="subtotal">R$ 123,45</div>
+                        <button class="botao-remover">×</button>
+                    </div>
+    
+                    <!-- Item 2 -->
+                    <div class="item-carrinho">
+                        <div class="descricao">
+                            <img src="images/Slice 15.png" alt="Conjunto Primavera Verão">
+                            <div class="info-produto">
+                                <h3>Conjunto Primavera Verão</h3>
+                                <p>Cor: Azul</p>
+                                <p>Tamanho: P</p>
+                                <p>Código do produto: ABCDEFGHIJK123</p>
+                                <span class="estoque">Em estoque</span>
+                            </div>
+                        </div>
+                        <div class="quantidade">
+                            <button class="botao-quantidade">▲</button>
+                            <span>1</span>
+                            <button class="botao-quantidade">▼</button>
+                        </div>
+                        <div class="preco">R$ 270,00</div>
+                        <div class="subtotal">R$ 270,00</div>
+                        <button class="botao-remover">×</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="calculadora-frete">
+                <input type="text" placeholder="30642220" class="input-cep">
+                <button class="botao-calcular">Calcular frete</button>
+            </div>
+    
+            <div class="opcoes-frete">
+                <div class="opcao-frete">
+                    <span class="tipo-frete">PAC</span>
+                    <span class="preco-frete">GRÁTIS</span>
+                    <span class="tempo-frete">8 dias</span>
+                </div>
+                <div class="opcao-frete">
+                    <span class="tipo-frete">Retirada na loja</span>
+                    <span class="preco-frete">GRÁTIS</span>
+                    <span class="tempo-frete">0 dias</span>
+                </div>
+                <div class="opcao-frete">
+                    <span class="tipo-frete">SEDEX</span>
+                    <span class="preco-frete">R$ 10,00</span>
+                    <span class="tempo-frete">4 dias</span>
+                </div>
+            </div>
+    
+            <div class="resumo-carrinho">
+                <div class="linha-resumo">
+                    <span>Subtotal</span>
+                    <span>R$ 393,45</span>
+                </div>
+                <div class="linha-resumo">
+                    <span>Frete</span>
+                    <span>R$ 10,00</span>
+                </div>
+                <div class="linha-resumo-total">
+                    <span>Total</span>
+                    <span>R$ 403,45</span>
+                </div>
+            </div>
+    
+            <div class="acoes-carrinho">
+                <div class="info-cupom">
+                    Se possuir cupom de desconto utilize na página seguinte
+                </div>
+                <div class="botoes">
+                    <a href="pagina-inicial-arrumadin.html"><button class="botao-continuar-comprando">← Escolher mais produtos</button></a>
+                    <a href="carrinho-vazio.html"><button class="botao-finalizar">Finalizar compra ✓</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer class="footer">
+        
+        <div class="footer-content">
+
+            <div class="informacoes-lado-esquerdo">
+                <div class="pagar-com">
+                    <p>Pagar com</p>
+                </div>
+                <div class="imagens-pagamento">
+                    <img src="images/icones-pagamento/icone mastercard.png" alt="Imagem 1">
+                    <img src="images/icones-pagamento/icone visa.png" alt="Imagem 2">
+                    <img src="images/icones-pagamento/icone pix.png" alt="Imagem 3">
+                    <img src="images/icones-pagamento/icone gpay.png" alt="Imagem 4">
+                    <img src="images/icones-pagamento/icone boleto.png" alt="Imagem 5">
+                </div>
+
+                <div class="direitos-reservados">
+                    <p>&copy; 2024 ARRUMADIN. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="footer-privacy">
+                    <a href="#centro-privacidade">Centro de Privacidade</a> |
+                    <a href="#politica-privacidade">Política de Privacidade e Cookies</a> |
+                    <a href="#termos-condicoes">Termos e Condições</a>
+                </div>
+            </div>
+        
+
+
+
+            <div class="informacoes-lado-direito">
+                <div class="encontre-nos">
+                    <p>ENCONTRE-NOS EM:</p>
+
+                    <div class="redes-sociais">
+                        <img src="images/icons-redes-sociais/toppng.com-instagram-black-and-white-icon-504x504.png" alt="Imagem">
+                        <img src="images/icons-redes-sociais/Slice 20.png" alt="Imagem 2">
+                        <img src="images/icons-redes-sociais/Slice 21.png" alt="Imagem 3">
+                    </div>
+                </div>
+
+                <div class="mais-ofertas">
+                    <p>Para receber mais ofertas :</p>
+                    <input type="text" placeholder="Insira seu e-mail...">
+                </div>
+
+                <div class="links-central-ajuda">
+                    <a href="#">Central de Ajuda</a>
+                    <a href="#">Devolução e Reembolso</a>
+                    <a href="#">Contate-nos: 0800 4002 8922</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+</body>
+</html>
