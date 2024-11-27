@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
+
+.footer {
+    background-color: #211E1E;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 150px; 
+    font-family: 'Inter';
+  }
+  
+  .direitos-reservados {
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  
+  .footer-privacy {
+    text-align: center;
+  }
+  .footer-privacy a {
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-privacy a:hover {
+    color: #AA410F;
+  }
+  
+  

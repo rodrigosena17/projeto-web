@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main-tela-carrinho.css">
+    <link rel="stylesheet" href="carrinho-vazio.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-arrumadin">
+            <a href="index.html"><img src="images/arrumadin-logo.png" alt="logo-arrumadin"></a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="TelaDeLogin.html">Entrar</a></li>
+                <li><a href="index.html">Comprar</a></li>
+                <li><a href="who.html">Quem nós somos</a></li>
+                <li><a href="carrinho.html" class="carrinho-link">Carrinho</a></li>
+            </ul>
+        </nav>
+
+        <div class="pesquisar">
+            <input type="text" class="search-input" placeholder="Pesquise aqui...">
+            <i class="fas fa-search search-icon"></i>
+            
+        </div>
+    </header>
+
+
+    <main class="container-carrinho">
+        <section class="conteudo-carrinho">
+            <div class="carrinho-vazio">
+                <svg class="icone-carrinho-vazio" viewBox="0 0 24 24" width="64" height="64">
+                    <path fill="currentColor" d="M6 2L3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6l-3-4H6zm.7 1.5h10.6l2.1 3H4.6l2.1-3zM4 7.5h16V20H4V7.5zM8 9v9h2V9H8zm6 0v9h2V9h-2z"/>
+                </svg>
+                <h2 class="mensagem-carrinho-vazio">Seu carrinho está vazio!</h2>
+                <a href="index.html"><button class="botao-continuar-comprando">Continuar Comprando</button></a>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer class="footer">
+        
+        <div class="footer-content">
+
+            <div class="informacoes-lado-esquerdo">
+                <div class="pagar-com">
+                    <p>Pagar com</p>
+                </div>
+                <div class="imagens-pagamento">
+                    <img src="images/icones-pagamento/icone mastercard.png" alt="Imagem 1">
+                    <img src="images/icones-pagamento/icone visa.png" alt="Imagem 2">
+                    <img src="images/icones-pagamento/icone pix.png" alt="Imagem 3">
+                    <img src="images/icones-pagamento/icone gpay.png" alt="Imagem 4">
+                    <img src="images/icones-pagamento/icone boleto.png" alt="Imagem 5">
+                </div>
+
+                <div class="direitos-reservados">
+                    <p>&copy; 2024 ARRUMADIN. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="footer-privacy">
+                    <a href="#centro-privacidade">Centro de Privacidade</a> |
+                    <a href="#politica-privacidade">Política de Privacidade e Cookies</a> |
+                    <a href="#termos-condicoes">Termos e Condições</a>
+                </div>
+            </div>
+        
+
+
+
+            <div class="informacoes-lado-direito">
+                <div class="encontre-nos">
+                    <p>ENCONTRE-NOS EM:</p>
+
+                    <div class="redes-sociais">
+                        <img src="images/icons-redes-sociais/toppng.com-instagram-black-and-white-icon-504x504.png" alt="Imagem">
+                        <img src="images/icons-redes-sociais/Slice 20.png" alt="Imagem 2">
+                        <img src="images/icons-redes-sociais/Slice 21.png" alt="Imagem 3">
+                    </div>
+                </div>
+
+                <div class="mais-ofertas">
+                    <p>Para receber mais ofertas :</p>
+                    <input type="text" placeholder="Insira seu e-mail...">
+                </div>
+
+                <div class="links-central-ajuda">
+                    <a href="#">Central de Ajuda</a>
+                    <a href="#">Devolução e Reembolso</a>
+                    <a href="#">Contate-nos: 0800 4002 8922</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+</body>
+</html>
