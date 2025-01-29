@@ -1,0 +1,443 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #141313;
+  }
+  
+  
+  .product-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .product-container {
+    font-family: 'Inter';
+    display: flex;
+    max-width: 1200px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .product-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .product-image img {
+    border-radius: 8px;
+  }
+  
+  .main-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .thumbnail-images {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .thumbnail-images img {
+    width: 125px;
+    height: 125px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid #e0e0e0;
+  }
+  
+  .thumbnail-images img.active {
+    border-color: #ff6b6b;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .thumbnail:hover, .thumbnail.active {
+    border-color: #e67e22;
+  }
+  
+  .product-details {
+    flex: 1;
+    padding: 40px;
+    background-color: #f5f5f5;
+  }
+  
+  .product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .rating-stars {
+    color: #ffb400;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  
+  .rating-count {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .product-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .original-price {
+    font-size: 18px;
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+  }
+  
+  .discounted-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .discount-percentage {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .product-size {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .size-label {
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .size-options {
+    display: flex;
+  }
+  
+  .size-option {
+    background-color: #e0e0e0;
+    padding: 6px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .size-option.active {
+    background-color: #ff6b6b;
+    color: #fff;
+  }
+
+  .size-option.selected {
+    background: #000;
+    color: white;
+  }
+  
+  .product-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .quantity-label {
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .add-to-cart, .buy-now {
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .product-recommendations {
+    padding: 40px;
+  }
+  
+  .product-recommendations h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px;
+    border-top: 1px solid gray;
+    font-family: 'Inter';
+  }
+  
+  .product-grid-clothes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+
+  .product-grid-clothes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.product-card-clothes {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    max-width: 200px; 
+    margin: 0 auto;
+}
+
+.product-image-clothes {
+    width: 180px;
+    height: 180px;   
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.favorite-button {
+    position: absolute;
+    right: 10px;
+    bottom: 108px;
+    background: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.product-info-clothes {
+    padding: 10px 0;
+}
+
+.product-title-clothes {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.rating-clothes {
+    color: #ffd700;
+    margin-right: 5px;
+}
+
+.sales-clothes {
+    font-size: 12px;
+    color: #666;
+}
+
+.price {
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+
+
+/* Nossas Media Queries */
+@media screen and (max-width: 768px) {
+  .product-page {
+    padding: 15px;
+  }
+
+  .product-container {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .product-image {
+    padding: 20px;
+  }
+
+  .thumbnail-images {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .thumbnail-images img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+  }
+
+  .product-details {
+    padding: 20px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .product-price {
+    flex-wrap: wrap;
+  }
+
+  .discounted-price {
+    font-size: 20px;
+  }
+
+  .size-options {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .size-option {
+    margin-bottom: 5px;
+  }
+
+  .product-quantity {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .add-to-cart, .buy-now {
+    width: 100%;
+    margin: 5px 0;
+    padding: 12px 20px;
+  }
+
+  
+  .product-grid-clothes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .product-card-clothes {
+    max-width: 100%;
+  }
+
+  .product-image-clothes {
+    width: 100%;
+    height: 150px;
+  }
+
+  .favorite-button {
+    bottom: 98px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .product-page {
+    padding: 10px;
+  }
+
+  .product-grid-clothes {
+    grid-template-columns: 1fr;
+  }
+
+  .product-title {
+    font-size: 18px;
+  }
+
+  .original-price, .discounted-price {
+    font-size: 16px;
+  }
+
+  .thumbnail-images img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .product-recommendations h2 {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .product-title-clothes {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .favorite-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .quantity-input {
+    width: 100%;
+    max-width: 120px;
+  }
+}
+
+
+@media screen and (max-height: 700px) {
+  .product-page {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .product-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

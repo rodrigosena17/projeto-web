@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter/static/Inter_28pt-Medium.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-ExtraLight.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Light.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Thin.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+    src: url(fonts/Inter/static/Inter_18pt-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:#141313;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    font-family: 'Inter';
+}
+.arrumadin-name {
+    color: #AA410F;
+    font-weight: bold;
+}
+.arrumadin-missão{
+    color: #AA410F;
+    font-weight: bold;
+    text-align: left;
+}
+.content {
+    flex: 1; 
+    padding: 20px;
+    background-color: #2a2a2a;
+} 
+ .QuemSomos p {
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+
+.QuemSomos h1 {
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .QuemSomos h2{
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .QuemSomos h3{
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .QuemSomos h4{
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+  }
+ 
