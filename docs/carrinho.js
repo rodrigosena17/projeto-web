@@ -15,6 +15,13 @@ function updateCartCount() {
     }
 }
 
+function checkEmptyCartRedirect() {
+    const cartItems = getCartItems();
+    if (cartItems.length === 0 && !window.location.href.includes('carrinho-vazio.html')) {
+        window.location.href = 'carrinho-vazio.html';
+    }
+}
+
 //Sempre que um item for adicionado ao carrinho, o JavaScript irá criar automaticamente um novo item no carrinho no padrão que foi colocado no HTML no momento da construção do site.
 function createCartItemHTML(product) {
     return `
@@ -41,10 +48,10 @@ function createCartItemHTML(product) {
     `;
 }
 
-function updateCartTotal() {
+function updateCartTotal(showFreight = false) {
     const cartItems = getCartItems();
     const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-    const frete = 10.00;
+    const frete = showFreight ? 10.00 : 0;
     const total = subtotal + frete;
 
     const resumoCarrinho = document.querySelector('.resumo-carrinho');
@@ -54,15 +61,51 @@ function updateCartTotal() {
                 <span>Subtotal</span>
                 <span>R$ ${subtotal.toFixed(2)}</span>
             </div>
+            ${showFreight ? `
             <div class="linha-resumo">
                 <span>Frete</span>
                 <span>R$ ${frete.toFixed(2)}</span>
             </div>
+            ` : ''}
             <div class="linha-resumo-total">
                 <span>Total</span>
                 <span>R$ ${total.toFixed(2)}</span>
             </div>
         `;
+    }
+}
+
+function handleCepCalculation() {
+    const opcoesFrete = document.querySelector('.opcoes-frete');
+    const inputCep = document.querySelector('.input-cep');
+    const botaoCalcular = document.querySelector('.botao-calcular');
+
+    // Inicialmente esconde as opções de frete
+    if (opcoesFrete) {
+        opcoesFrete.style.display = 'none';
+    }
+
+    if (botaoCalcular && inputCep) {
+        botaoCalcular.addEventListener('click', () => {
+            const cep = inputCep.value.replace(/\D/g, ''); // Remove não-números
+            
+            if (cep.length === 8) { // CEP válido tem 8 dígitos
+                // Mostra as opções de frete
+                if (opcoesFrete) {
+                    opcoesFrete.style.display = 'block';
+                }
+                // Atualiza o resumo incluindo o frete
+                updateCartTotal(true);
+            } else {
+                alert('Por favor, digite um CEP válido');
+                // Esconde as opções de frete
+                if (opcoesFrete) {
+                    opcoesFrete.style.display = 'none';
+                }
+                // Atualiza o resumo sem o frete
+                updateCartTotal(false);
+            }
+        });
     }
 }
 
@@ -73,11 +116,11 @@ function renderCartItems() {
         console.log('Itens no carrinho:', cartItems);
 
         if (cartItems.length === 0) {
-            cartItemsContainer.innerHTML = '<p>Seu carrinho está vazio</p>';
+            window.location.href = 'carrinho-vazio.html';
         } else {
             cartItemsContainer.innerHTML = cartItems.map(item => createCartItemHTML(item)).join('');
         }
-        updateCartTotal();
+        updateCartTotal(false);
     }
 }
 
@@ -85,8 +128,14 @@ function removeFromCart(productCode) {
     let cartItems = getCartItems();
     cartItems = cartItems.filter(item => item.code !== productCode);
     saveCartItems(cartItems);
-    renderCartItems();
-    updateCartCount();
+    
+
+    if(cartItems.length === 0) {
+        window.location.href = 'carrinho-vazio.html';
+    } else {
+        renderCartItems();
+        updateCartCount();
+    }
 }
 
 function updateItemQuantity(productCode, action) {
@@ -105,9 +154,25 @@ function updateItemQuantity(productCode, action) {
 }
 
 
+function clearCart() {
+    // Limpa o localStorage
+    localStorage.removeItem('cartItems');
+    // Atualiza o contador
+    updateCartCount();
+    // Redireciona para a página de carrinho vazio
+    window.location.href = 'carrinho-vazio.html';
+}
+
+
 // Inicialização e event listeners
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Página carregada');
+
+    const cartItems = getCartItems();
+    if (cartItems.length === 0 && !window.location.href.includes('carrinho-vazio.html')) {
+        window.location.href = 'carrinho-vazio.html';
+        return;
+    }
     
 
     // Verifica se o usuário está na página de carrinho
@@ -116,9 +181,21 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Página do carrinho detectada');
         
 
+        // Inicializa sem mostrar o frete
+        updateCartTotal(false);
+        
+        // Inicializa o handler do CEP
+        handleCepCalculation();
+
         // Renderiza os itens iniciais
         renderCartItems();
 
+
+        // Adiciona listener para o botão finalizar compra
+        const botaoFinalizar = document.querySelector('.botao-finalizar');
+        if (botaoFinalizar) {
+            botaoFinalizar.addEventListener('click', clearCart);
+        }
 
         // Event listener para os botões do carrinho -> click
         document.querySelector('.itens-carrinho')?.addEventListener('click', function(e) {
