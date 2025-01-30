@@ -135,6 +135,105 @@ img {
     margin-bottom: 30px;
 }
 
+.alert-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #ff4444 0%, #f44336 100%);
+    color: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(244, 67, 54, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: alertSlideIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    max-width: 40%;
+    max-height: 30%;
+    width: 350px;
+}
+
+.alert-message {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    font-family: "InterBold";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.alert-message::before {
+    content: "!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.alert-box button {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #f44336;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "InterBold";
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 0.5rem;
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.2);
+}
+
+.alert-box button:hover {
+    background-color: #fff;
+    color: #ff3322;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 67, 54, 0.3);
+}
+
+.alert-box button:active {
+    transform: translateY(1px);
+}
+
+.alert-box button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.alert-box button:hover::after {
+    opacity: 1;
+}
+
+@keyframes alertSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
 @media screen and (max-width: 1024px){
     .painel{
         width: 370px;            
@@ -349,6 +448,8 @@ img {
         margin-left: 7px;
         margin-bottom: 20px;
     }
+
+    
 }
 
 @media screen and (max-height: 600px) and (orientation: landscape) {
