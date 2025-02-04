@@ -100,6 +100,77 @@ body {
     border-radius: 6px;
 }
 
+.container-carrossel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper-carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-carrossel {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide-carrossel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.botao-carrossel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.botao-carrossel:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.anterior {
+    left: 10px;
+}
+
+.proximo {
+    right: 10px;
+}
+
+.pontos-carrossel {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.ponto {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ponto.ativo {
+    background: white;
+}
+
 .destaques-container {
     display: flex;
     justify-content: center;

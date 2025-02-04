@@ -19,10 +19,10 @@
         
         <nav>
             <ul>
-                <li><a href="TelaDeLogin.html">Entrar</a></li>
                 <li><a href="index.html">Comprar</a></li>
                 <li><a href="who.html">Quem nós somos</a></li>
-                <li><a href="carrinho.html" class="carrinho-link">Carrinho(2)</a></li>
+                <li><a href="#">Meu Perfil</a></li>
+                <li><a href="carrinho.html" class="carrinho-link">Carrinho</a></li>
             </ul>
         </nav>
 
@@ -53,9 +53,35 @@
                 <a href="#roupas"><button class="explore-button">Explore</button></a> 
             </div> 
 
-            <div class="imagem-div">
-                <img src="images/Slice 9.png" alt="Imagem carrossel" class="explore-imagem">
+            <div class="container-carrossel">
+                <div class="wrapper-carrossel">
+                    
+                    <div class="slide-carrossel">
+                        <img src="images/foto-duas-mulheres.jpg" alt="Imagem carrossel 1">
+                    </div>
+                    
+                    <div class="slide-carrossel">
+                        <img src="images/foto-mulher-dancando.jpg" alt="Imagem carrossel 2">
+                    </div>
+                    
+                    <div class="slide-carrossel">
+                        <img src="images/foto-modelo-de-oculos.jpg" alt="Imagem carrossel 3">
+                    </div>
+                    
+                    <div class="slide-carrossel">
+                        <img src="images/foto-modelo-com-bolsas.jpg" alt="Imagem carrossel 4">
+                    </div>
+                    
+                    <div class="slide-carrossel">
+                        <img src="images/foto-mulher-oculos-sorrindo.jpg" alt="Imagem carrossel 5">
+                    </div>
+
+                </div>
+                <button class="botao-carrossel anterior">&#10094;</button>
+                <button class="botao-carrossel proximo">&#10095;</button>
+                <div class="pontos-carrossel"></div>
             </div>
+
 
             <div class="destaques-container">
                 <h2 class="destaques">Destaques</h2>
@@ -246,6 +272,10 @@
 
         </div>
     </footer>
+
+    <script src="utils.js"></script>
+    <script src="shared.js"></script>
+    <script src="home.js"></script>
     
 </body>
 </html>
