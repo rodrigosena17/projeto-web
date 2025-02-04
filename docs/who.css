@@ -18,7 +18,7 @@
 
 body {
     background-color:#141313;
-    height: 100vh; 
+    min-height: 100vh; 
     display: flex;
     flex-direction: column; 
     font-family: 'Inter';
@@ -43,7 +43,6 @@ body {
     line-height: 1.6;
     font-size: 17px;
   }
-
 .QuemSomos h1 {
     color: white;
     font-size: 26px;
