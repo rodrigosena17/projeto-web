@@ -173,6 +173,11 @@ body {
     background-color: #ff6b6b;
     color: #fff;
   }
+
+  .size-option.selected {
+    background: #000;
+    color: white;
+  }
   
   .product-quantity {
     display: flex;

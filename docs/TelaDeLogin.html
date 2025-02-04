@@ -10,20 +10,27 @@
     <form action="" class="form">
         <div class="painel">
             <div class="painelEsquerdo">
-            <img src="arrumadin logo.png">
-            <p class="bemvindo">Bem-Vindo!</p>
-            <p class="acesse">Não possui conta? Cadastre-se agora mesmo.</p>
-            <button class="botaoCriar"><a href="TelaCriarConta.html">Criar Conta</a></button>
-            <br><a href="">Esqueci minha senha</a><br>
+                <img src="arrumadin logo.png">
+                <p class="bemvindo">Bem-Vindo!</p>
+                <p class="acesse">Não possui conta? Cadastre-se agora mesmo.</p>
+                <button class="botaoCriar"><a href="TelaCriarConta.html">Criar Conta</a></button>
+                <br><a href="">Esqueci minha senha</a><br>
             </div>
             <div class="painelDireito">
                 <p class="criar">Entre na sua conta</p>
                 <p class="preencher">Preencha seus dados</p>
                 <input class="email" type="email" placeholder="Email" name="" id=""><br>     
-                <input class="senha" type="senha" placeholder="Senha" name="" id=""><br>
-                <button class="botaoEntrar"><a href="index.html">Entrar</a></button>
+                <input class="senha" type="password" placeholder="Senha" name="" id=""><br>
+                <button class="botaoEntrar" type="button" onclick="tentarEntrar(event)"><a>Entrar</a></button>
             </div>
         </div>
     </form>
+
+    <div id="alert-box" class="alert-box">
+        <p class="alert-message">E-mail ou senha inválidos. Tente novamente.</p>
+        <button onclick="closeAlert()">Fechar</button>
+    </div>
+
+    <script src="telaLogin.js"></script>
 </body>
 </html>
