@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterProducts(searchInput.value, true);
     });
 
-    // Pesquisar quando pressionar Enter (o emoji de lupa não é funcional)
+    // Pesquisar quando pressionar Enter
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             filterProducts(searchInput.value, true);
@@ -231,7 +231,7 @@ class Carrossel {
     }
     
     //Função que move para a próxima foto
-    proximo() {             //Utilizando contador para sempre contar + 1
+    proximo() {             //Utilizando contador para somar + 1
         this.indiceAtual = (this.indiceAtual + 1) % this.quantidadeSlides;
         this.irParaSlide(this.indiceAtual);
     }
@@ -262,4 +262,19 @@ class Carrossel {
 document.addEventListener('DOMContentLoaded', () => {
     const containerCarrossel = document.querySelector('.container-carrossel');
     new Carrossel(containerCarrossel);
+});
+
+
+//Função que adiciona um evento para o input de email, ao clicar no botão CADASTRAR, o email é validado pelo sistema
+document.getElementById("botaoCadastrar").addEventListener("click", function () {
+    const emailInput = document.getElementById("meu-email").value;
+    const emailSinais = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Aqui, a função verifica os sinais
+
+    if (emailSinais.test(emailInput)) {
+        window.alert("E-mail cadastrado com sucesso!");
+    } else {
+        window.alert("E-mail inválido!");
+    }
+
+    document.getElementById("meu-email").value = "";
 });

@@ -60,6 +60,26 @@
     padding-left: 10px;
 }
 
+.botao-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.cadastrar-button {
+    background-color: #B44714;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.cadastrar-button:hover {
+    background-color: #923910;
+}
+
 .encontre-nos .redes-sociais {
     display: flex;
     flex-direction: row;
