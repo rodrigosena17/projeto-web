@@ -19,9 +19,9 @@ body {
 
 .painel {
     display: flex;
-    background-color: #2a2a2a; 
-    width: 370px;            
-    height: 250px;
+    background-color: #2a2a2a;  
+    width: 600px;            
+    height: 400px;
     position: absolute;           
     text-align: center; 
     top: 50%;
@@ -32,30 +32,30 @@ body {
 } 
 
 .painelEsquerdo{
-    width: 110px;
+    width: 200px;
     background-color: rgb(170, 65, 15);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; 
     text-align: center;
-    padding: 15px;   
+    padding: 20px;  
 }
 
 .botaoCriar{
-    width: 50px;
-    height: 25px;
-    font-size: 9px;
+    width: 120px;
+    height: 35px;
+    font-size: 12px;
     font-family: InterBold;
     background-color: #AA410F;
     color: white;
-    border: none;
+    border: 1.5px solid white;
     border-radius: 30px;
 }
 
 .botaoEntrar{
     margin-top: 30px;
     margin-bottom: 5px;
-    width: 50px;
-    height: 20px;
+    width: 100px;
+    height: 30px;
     font-size: 9px;
     font-family: InterBold;
     background-color: #AA410F;
@@ -67,7 +67,7 @@ body {
 .bemvindo {
     font-family: InterBlack;
     color: white;
-    font-size: 13px;
+    font-size: 18px;
     margin-bottom: 20px;
     
 }
@@ -75,27 +75,27 @@ body {
 .acesse {
     font-family: Inter;
     color: white;
-    font-size: 8px;
+    font-size: 12px;
     text-align: left;
     padding-left: 10px;
 }
 
 a {
     font-family: Inter;
-    font-size: 6px;
+    font-size: 10px;
     color: white;
     text-decoration: none;
 }
 
 img {
-    width: 100px;
-    height: 50px;
+    width: 175px;
+    height: 75px;
 }
 
 .criar {
     font-family: InterBlack;
     color: #AA410F;
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 25px;
     text-align: center;
 }
@@ -103,93 +103,94 @@ img {
 .preencher {
     font-family: Inter;
     color: rgb(167, 165, 165);
-    font-size: 8px;
+    font-size: 12px;
     text-align: center;
     padding-left: 10px;
 }
 
 .email {
     font-family: Inter;
-    width: 180px;
-    height: 20px;
-    font-size: 10px;
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
     color: rgb(167, 165, 165);
     background-color: rgb(236, 233, 233);
     border: none;
     padding: 7px;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-left: 10px;
 }
 
 .senha {
     font-family: Inter;
-    width: 180px;
-    height: 20px;
-    font-size: 10px;
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
     color: rgb(167, 165, 165);
     background-color: rgb(236, 233, 233);
     border: none;
     padding: 7px;
     margin-left: 10px;
-    margin-top: 9px;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
 @media screen and (max-width: 1024px){
     .painel{
-        width: 370px;            
-    height: 250px;
+        width: 500px;            
+        height: 350px;
     }
 
     .painelEsquerdo{
-        width: 110px;
+        width: 180px;
     }
 
     .botaoCriar{
-        width: 80px;
-        height: 25px;
-        font-size: 9px;
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
     }
 
     .botaoEntrar{
         margin-top: 30px;
         margin-bottom: 5px;
-        width: 50px;
-        height: 20px;
+        width: 80px;
+        height: 25px;
+        font-size: 10px;
     }
 
     .bemvindo {
-        font-size: 13px;
+        font-size: 16px;
         margin-bottom: 20px;
     }
 
     .acesse {
-        font-size: 8px;
+        font-size: 10px;
         padding-left: 10px;
     }
 
     a {
-        font-size: 6px;
+        font-size: 8px;
     }
 
     img {
-        width: 100px;
-        height: 50px;
+        width: 130px;
+        height: 70px;
     }
 
     .criar {
-        font-size: 14px;
+        font-size: 16px;
         margin-top: 25px;
     }
 
     .preencher {
-        font-size: 8px;
+        font-size: 10px;
         padding-left: 10px;
     }
 
     .email {
-        width: 180px;
-        height: 20px;
+        width: 200px;
+        height: 25px;
         font-size: 10px;
         padding: 7px;
         margin-top: 15px;
@@ -197,8 +198,8 @@ img {
     }
 
     .senha {
-        width: 180px;
-        height: 20px;
+        width: 200px;
+        height: 25px;
         font-size: 10px;
         padding: 7px;
         margin-left: 10px;
@@ -209,58 +210,58 @@ img {
 
 @media screen and (max-width: 768px) {
     .painel{
-        width: 350px;            
-    height: 230px;
+        width: 400px;
+        height: 300px;
     }
 
     .painelEsquerdo{
-        width: 102px;
+        width: 155px;
     }
 
     .botaoCriar{
-        width: 65px;
-        height: 20px;
-        font-size: 8px;
+        width: 90px;
+        height: 25px;
+        font-size: 9px;
     }
 
     .botaoEntrar{
         margin: 0px;
-        width: 40px;
-        height: 18px;
+        width: 70px;
+        height: 20px;
     }
 
     .bemvindo {
-        font-size: 11px;
+        font-size: 14px;
         margin-bottom: 15px;
     }
 
     .acesse {
-        font-size: 6px;
-        padding-left: 8px;
+        font-size: 9px;
+        padding-left: 10px;
     }
 
     a {
-        font-size: 5px;
+        font-size: 10px;
     }
 
     img {
-        width: 85px;
-        height: 40px;
+        width: 120px;
+        height: 50px;
     }
 
     .criar {
-        font-size: 11px;
+        font-size: 14px;
         margin-top: 20px;
     }
 
     .preencher {
-        font-size: 7px;
+        font-size: 9px;
         padding-left: 8px;
     }
 
     .email {
-        width: 130px;
-        height: 17px;
+        width: 180px;
+        height: 18px;
         font-size: 8px;
         padding: 5px;
         margin-top: 10px;
@@ -268,8 +269,8 @@ img {
     }
 
     .senha {
-        width: 130px;
-        height: 17px;
+        width: 180px;
+        height: 18px;
         font-size: 8px;
         padding: 5px;
         margin-top: 10px;
@@ -281,7 +282,7 @@ img {
 @media screen and (max-width: 480px) {
     .painel{
         width: 240px;            
-    height: 180px;
+        height: 180px;
     }
     
     .painelEsquerdo{
