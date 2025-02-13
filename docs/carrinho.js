@@ -1,57 +1,61 @@
 // código do carrinho.js
-function getCartItems() {
-    return JSON.parse(localStorage.getItem('cartItems')) || [];
+function obterItensCarrinho() {
+    return JSON.parse(localStorage.getItem('itensCarrinho')) || [];
 }
 
-function saveCartItems(items) {
-    localStorage.setItem('cartItems', JSON.stringify(items));
+//Salva itens com local storage
+function salvarItensCarrinho(itens) {
+    localStorage.setItem('itensCarrinho', JSON.stringify(itens));
 }
 
-function updateCartCount() {
-    const cartItems = getCartItems();
-    const cartLink = document.querySelector('.carrinho-link');
-    if (cartLink) {
-        cartLink.textContent = `Carrinho(${cartItems.length})`;
+//Atualiza contagem
+function atualizarContagemCarrinho() {
+    const itensCarrinho = obterItensCarrinho();
+    const linkCarrinho = document.querySelector('.carrinho-link');
+    if (linkCarrinho) {
+        linkCarrinho.textContent = `Carrinho(${itensCarrinho.length})`;
     }
 }
 
-function checkEmptyCartRedirect() {
-    const cartItems = getCartItems();
-    if (cartItems.length === 0 && !window.location.href.includes('carrinho-vazio.html')) {
+//Verifica se o carrinho está vazio, estando vazio, ele põe a tela de carrinho vazio
+function verificarCarrinhoVazioRedirecionar() {
+    const itensCarrinho = obterItensCarrinho();
+    if (itensCarrinho.length === 0 && !window.location.href.includes('carrinho-vazio.html')) {
         window.location.href = 'carrinho-vazio.html';
     }
 }
 
 //Sempre que um item for adicionado ao carrinho, o JavaScript irá criar automaticamente um novo item no carrinho no padrão que foi colocado no HTML no momento da construção do site.
-function createCartItemHTML(product) {
+function criarHTMLItemCarrinho(produto) {
     return `
         <div class="item-carrinho">
             <div class="descricao">
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${produto.imagem}" alt="${produto.nome}">
                 <div class="info-produto">
-                    <h3>${product.name}</h3>
-                    <p>Cor: ${product.color || 'Única'}</p>
-                    <p>Tamanho: ${product.size}</p>
-                    <p class="codigo">Código do produto: ${product.code}</p>
+                    <h3>${produto.nome}</h3>
+                    <p>Cor: ${produto.cor || 'Única'}</p>
+                    <p>Tamanho: ${produto.tamanho}</p>
+                    <p class="codigo">Código do produto: ${produto.codigo}</p>
                     <span class="estoque">Em estoque</span>
                 </div>
             </div>
             <div class="quantidade">
                 <button class="botao-quantidade" data-action="increase">▲</button>
-                <span>${product.quantity}</span>
+                <span>${produto.quantidade}</span>
                 <button class="botao-quantidade" data-action="decrease">▼</button>
             </div>
-            <div class="preco">R$ ${product.price.toFixed(2)}</div>
-            <div class="subtotal">R$ ${(product.price * product.quantity).toFixed(2)}</div>
-            <button class="botao-remover" data-code="${product.code}">×</button>
+            <div class="preco">R$ ${produto.preco.toFixed(2)}</div>
+            <div class="subtotal">R$ ${(produto.preco * produto.quantidade).toFixed(2)}</div>
+            <button class="botao-remover" data-code="${produto.codigo}">×</button>
         </div>
     `;
 }
 
-function updateCartTotal(showFreight = false) {
-    const cartItems = getCartItems();
-    const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-    const frete = showFreight ? 10.00 : 0;
+//Essa função mostra o design da parte do frete, utilizando modelos do HTML para criar quando o tiver itens adicionados
+function atualizarTotalCarrinho(mostrarFrete = false) {
+    const itensCarrinho = obterItensCarrinho();
+    const subtotal = itensCarrinho.reduce((total, item) => total + (item.preco * item.quantidade), 0);
+    const frete = mostrarFrete ? 10.00 : 0;
     const total = subtotal + frete;
 
     const resumoCarrinho = document.querySelector('.resumo-carrinho');
@@ -61,7 +65,7 @@ function updateCartTotal(showFreight = false) {
                 <span>Subtotal</span>
                 <span>R$ ${subtotal.toFixed(2)}</span>
             </div>
-            ${showFreight ? `
+            ${mostrarFrete ? `
             <div class="linha-resumo">
                 <span>Frete</span>
                 <span>R$ ${frete.toFixed(2)}</span>
@@ -75,7 +79,8 @@ function updateCartTotal(showFreight = false) {
     }
 }
 
-function handleCepCalculation() {
+//Função para fazer o cálculo do CEP, aceitando só CEP válido
+function manipularCalculoCep() {
     const opcoesFrete = document.querySelector('.opcoes-frete');
     const inputCep = document.querySelector('.input-cep');
     const botaoCalcular = document.querySelector('.botao-calcular');
@@ -95,7 +100,7 @@ function handleCepCalculation() {
                     opcoesFrete.style.display = 'block';
                 }
                 // Atualiza o resumo incluindo o frete
-                updateCartTotal(true);
+                atualizarTotalCarrinho(true);
             } else {
                 alert('Por favor, digite um CEP válido');
                 // Esconde as opções de frete
@@ -103,63 +108,65 @@ function handleCepCalculation() {
                     opcoesFrete.style.display = 'none';
                 }
                 // Atualiza o resumo sem o frete
-                updateCartTotal(false);
+                atualizarTotalCarrinho(false);
             }
         });
     }
 }
 
-function renderCartItems() {
-    const cartItemsContainer = document.querySelector('.itens-carrinho');
-    if (cartItemsContainer) {
-        const cartItems = getCartItems();
-        console.log('Itens no carrinho:', cartItems);
+//Aqui ele basicamente obtem todos os itens que estão no array e vai exibindo na tela no formato padronizado da tela do carrinho
+function renderizarItensCarrinho() {
+    const containerItensCarrinho = document.querySelector('.itens-carrinho');
+    if (containerItensCarrinho) {
+        const itensCarrinho = obterItensCarrinho();
+        console.log('Itens no carrinho:', itensCarrinho);
 
-        if (cartItems.length === 0) {
+        if (itensCarrinho.length === 0) {
             window.location.href = 'carrinho-vazio.html';
         } else {
-            cartItemsContainer.innerHTML = cartItems.map(item => createCartItemHTML(item)).join('');
+            containerItensCarrinho.innerHTML = itensCarrinho.map(item => criarHTMLItemCarrinho(item)).join('');
         }
-        updateCartTotal(false);
+        atualizarTotalCarrinho(false);
     }
 }
 
-function removeFromCart(productCode) {
-    let cartItems = getCartItems();
-    cartItems = cartItems.filter(item => item.code !== productCode);
-    saveCartItems(cartItems);
+//Aqui ele pega todos os itens que estão no carrinho e aplica a remoção no item que o usuário quiser.
+//Se não tiver itens, então exibe a página de carrinho vazio.
+function removerDoCarrinho(codigoProduto) {
+    let itensCarrinho = obterItensCarrinho();
+    itensCarrinho = itensCarrinho.filter(item => item.codigo !== codigoProduto);
+    salvarItensCarrinho(itensCarrinho);
     
-
-    if(cartItems.length === 0) {
+    if(itensCarrinho.length === 0) {
         window.location.href = 'carrinho-vazio.html';
     } else {
-        renderCartItems();
-        updateCartCount();
+        renderizarItensCarrinho();
+        atualizarContagemCarrinho();
     }
 }
 
-function updateItemQuantity(productCode, action) {
-    let cartItems = getCartItems();
-    const itemIndex = cartItems.findIndex(item => item.code === productCode);
+//Vai atualizar a quantidade de item no carrinho. Diminuindo ou aumentando
+function atualizarQuantidadeItem(codigoProduto, acao) {
+    let itensCarrinho = obterItensCarrinho();
+    const indiceItem = itensCarrinho.findIndex(item => item.codigo === codigoProduto);
     
-    if (itemIndex !== -1) {
-        if (action === 'increase') {
-            cartItems[itemIndex].quantity++;
-        } else if (action === 'decrease' && cartItems[itemIndex].quantity > 1) {
-            cartItems[itemIndex].quantity--;
+    if (indiceItem !== -1) {
+        if (acao === 'increase') {
+            itensCarrinho[indiceItem].quantidade++;
+        } else if (acao === 'decrease' && itensCarrinho[indiceItem].quantidade > 1) {
+            itensCarrinho[indiceItem].quantidade--;
         }
-        saveCartItems(cartItems);
-        renderCartItems();
+        salvarItensCarrinho(itensCarrinho);
+        renderizarItensCarrinho();
     }
 }
 
-
-function clearCart() {
-    // Limpa o localStorage
-    localStorage.removeItem('cartItems');
-    // Atualiza o contador
-    updateCartCount();
-    // Redireciona para a página de carrinho vazio
+function limparCarrinho() {
+    // Limpa o localStorage e remove o item
+    localStorage.removeItem('itensCarrinho');
+    // Atualiza o contador para menos
+    atualizarContagemCarrinho();
+    // Redireciona para a página de carrinho vazio caso tenha 0 item
     window.location.href = 'carrinho-vazio.html';
 }
 
@@ -168,59 +175,58 @@ function clearCart() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Página carregada');
 
-    const cartItems = getCartItems();
-    if (cartItems.length === 0 && !window.location.href.includes('carrinho-vazio.html')) {
+    //Aqui a função vai mostrar a tela de carrinho vazio se não tiver nenhum item dentro
+    const itensCarrinho = obterItensCarrinho();
+    if (itensCarrinho.length === 0 && !window.location.href.includes('carrinho-vazio.html')) {
         window.location.href = 'carrinho-vazio.html';
         return;
     }
-    
+
 
     // Verifica se o usuário está na página de carrinho
-    const cartContainer = document.querySelector('.conteudo-carrinho');
-    if (cartContainer) {       //Se estiver, a página com os itens deve ser renderizada
+    const containerCarrinho = document.querySelector('.conteudo-carrinho');
+    if (containerCarrinho) {       //Se estiver, a página com os itens deve ser renderizada
+
         console.log('Página do carrinho detectada');
-        
+
 
         // Inicializa sem mostrar o frete
-        updateCartTotal(false);
+        atualizarTotalCarrinho(false);
         
         // Inicializa o handler do CEP
-        handleCepCalculation();
+        manipularCalculoCep();
 
         // Renderiza os itens iniciais
-        renderCartItems();
-
+        renderizarItensCarrinho();
 
         // Adiciona listener para o botão finalizar compra
         const botaoFinalizar = document.querySelector('.botao-finalizar');
         if (botaoFinalizar) {
-            botaoFinalizar.addEventListener('click', clearCart);
+            botaoFinalizar.addEventListener('click', limparCarrinho);
         }
 
         // Event listener para os botões do carrinho -> click
         document.querySelector('.itens-carrinho')?.addEventListener('click', function(e) {
-            const target = e.target;
-
+            const alvo = e.target;
 
             // Aqui, faz o item ser removido ao clicar no "X"
-            if (target.classList.contains('botao-remover')) {
-                const productCode = target.dataset.code;
-                removeFromCart(productCode);
+            if (alvo.classList.contains('botao-remover')) {
+                const codigoProduto = alvo.dataset.code;
+                removerDoCarrinho(codigoProduto);
             }
             
             // Essa função faz com que a quantidade de produtos aumente ao clicar na seta 
-            if (target.classList.contains('botao-quantidade')) {
-                const itemContainer = target.closest('.item-carrinho');
-                const productCode = itemContainer.querySelector('.botao-remover').dataset.code;
-                const action = target.dataset.action;
-                updateItemQuantity(productCode, action);
+            if (alvo.classList.contains('botao-quantidade')) {
+                const containerItem = alvo.closest('.item-carrinho');
+                const codigoProduto = containerItem.querySelector('.botao-remover').dataset.code;
+                const acao = alvo.dataset.action;
+                atualizarQuantidadeItem(codigoProduto, acao);
             }
         });
-
         
-        console.log('Conteúdo do localStorage:', localStorage.getItem('cartItems'));
+        console.log('Conteúdo do localStorage:', localStorage.getItem('itensCarrinho'));
     }
 
     // Sempre atualiza o contador do carrinho
-    updateCartCount();
+    atualizarContagemCarrinho();
 });
